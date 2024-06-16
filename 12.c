@@ -44,8 +44,6 @@ void insertChaining(Node* table[], int size, int key) {
 
 
 
-Department of Computer Science and Engineering, Rajalakshmi Engineering College
-
 
 
  int searchChaining(Node* table[], int size, int key) {
@@ -94,8 +92,6 @@ void rehash(HashTable* ht) {
         }
     
 
-Department of Computer Science and Engineering, Rajalakshmi Engineering College
-
 
 
 }
@@ -141,10 +137,6 @@ int main() {
     for (int i = 0; i < TABLE_SIZE; i++) {
         table[i] = -1;
     }
-
-
-
-Department of Computer Science and Engineering, Rajalakshmi Engineering College
 
 
 
