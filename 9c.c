@@ -17,10 +17,6 @@ typedef struct AdjList {
 
 
 
-Department of Computer Science and Engineering, Rajalakshmi Engineering College
-
-
-
 	 // Structure to represent a graph
 typedef struct Graph {
     int V;
@@ -71,15 +67,6 @@ void DFSUtil(Graph* graph, int v, bool visited[]) {
         adjList = adjList->next;
     }
 }
-
-
-
-Department of Computer Science and Engineering, Rajalakshmi Engineering College
-
-
-
-
-
 // Function to perform DFS starting from a given vertex
 void DFS(Graph* graph, int startVertex) {
     // Initialize visited array
