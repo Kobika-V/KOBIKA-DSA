@@ -44,8 +44,6 @@ int main() {
     }
 
 
-Department of Computer Science and Engineering, Rajalakshmi Engineering College
-
 
     printArray(arr, n);
     return 0;
@@ -94,10 +92,6 @@ void merge(int arr[], int left, int mid, int right) {
         L[i] = arr[left + i];
     for (int j = 0; j < n2; j++)
         R[j] = arr[mid + 1 + j];
-
-
-Department of Computer Science and Engineering, Rajalakshmi Engineering College
-
 
 
     int i = 0, j = 0, k = left;
