@@ -13,7 +13,7 @@ typedef struct AdjList {
 } AdjList;
 
 
-Department of Computer Science and Engineering, Rajalakshmi Engineering College
+
 
 // Structure to represent a graph
 typedef struct Graph {
@@ -57,11 +57,7 @@ void addEdge(Graph* graph, int src, int dest) {
     graph->array[dest].head = newNode;
 } 
 
-           Department of Computer Science and Engineering, Rajalakshmi Engineering College
-
-
-
-Program:
+   
 // Function to print the adjacency list representation of graph
 void printGraph(Graph* graph) {
     for (int v = 0; v < graph->V; ++v) {
