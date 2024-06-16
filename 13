@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_DESTINATIONS 10
+#define MAX_NAME_LENGTH 50
+
+// Structure to hold destination information
+struct Destination {
+    char name[MAX_NAME_LENGTH];
+    int time;
+    int distance;
+};
+
+// Function to display destination information
+void displayDestinations(struct Destination destinations[], int numDestinations) {
+    printf("Destinations:\n");
+    for (int i = 0; i < numDestinations; i++) {
+        printf("%d. Name: %s, Time: %d hours, Distance: %d km\n", i + 1, destinations[i].name, destinations[i].time, destinations[i].distance);
+    }
+}
+
+int main() {
+    struct Destination *destinations = NULL;
+    int numDestinations = 0;
+    char input[MAX_NAME_LENGTH];
+    int choice;
+
+    while (1) {
+        printf("\nTravel Planner Menu:\n");
+        printf("1. Add Destination\n");
+        printf("2. Display Destinations\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        getchar(); // Consume newline character left in input buffer
+
+        switch (choice) {
+            case 1:
+                // Allocate memory for new destination
+                destinations = realloc(destinations, (numDestinations + 1) * sizeof(struct Destination));
+                if (destinations == NULL) {
+                    printf("Memory allocation failed!\n");
+                    return 1;
+                }
+
+                // Get destination information from user
+                printf("Enter destination name: ");
+                fgets(destinations[numDestinations].name, MAX_NAME_LENGTH, stdin);
+                destinations[numDestinations].name[strcspn(destinations[numDestinations].name, "\n")] = '\0'; // Remove newline character
+                printf("Enter estimated time to reach %s (in hours): ", destinations[numDestinations].name);
+                scanf("%d", &destinations[numDestinations].time);
+                printf("Enter distance to %s (in km): ", destinations[numDestinations].name);
+                scanf("%d", &destinations[numDestinations].distance);
+                numDestinations++;
+                break;
+            case 2:
+                if (numDestinations == 0) {
+                    printf("No destinations added yet!\n");
+                } else {
+                    displayDestinations(destinations, numDestinations);
+                }
+                break;
+            case 3:
+                // Free allocated memory before exiting
+                free(destinations);
+                printf("Exiting...\n");
+                return 0;
+            default:
+                printf("Invalid choice. Please enter a valid option.\n");
+                break;
+        }
+    }
+
+    return 0;
+}
