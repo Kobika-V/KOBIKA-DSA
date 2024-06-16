@@ -41,14 +41,6 @@ int main() {
         printf("\n");
 }
 
-
-Department of Computer Science and Engineering, Rajalakshmi Engineering College
-
-
-
-
-Program:
-
     // Find and display the student with the highest total marks
     struct Student topStudent = findStudentWithHighestMarks(students, n);
     printf("Student with highest total marks:\n");
